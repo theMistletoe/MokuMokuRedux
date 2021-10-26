@@ -30,4 +30,7 @@ jobs:
 #     - run: npm run build --if-present
 #     - run: npm test
     - name: "serverless v"
-      run: sls version
+      run: |
+        yarn global add serverless
+        echo "$(yarn global bin)" >> ${GITHUB_PATH}
+        sls version
